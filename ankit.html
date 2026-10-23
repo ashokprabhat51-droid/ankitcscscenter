@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit CSC Centre & Mobile Accessories</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #0056b3;
+            --secondary: #ff6600;
+            --dark: #1a1a1a;
+            --light: #f4f6f9;
+        }
+
+        body {
+            background-color: var(--light);
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #003366, var(--primary));
+            color: #fff;
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo h1 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #ddd;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1eb854;
+            transform: translateY(-2px);
+        }
+
+        /* Container Section */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h3 {
+            font-size: 28px;
+            color: var(--dark);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h3::after {
+            content: '';
+            width: 60%;
+            height: 4px;
+            background: var(--secondary);
+            position: absolute;
+            bottom: 0;
+            left: 20%;
+            border-radius: 2px;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* Cards Style */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            text-align: center;
+            padding: 25px 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card i {
+            font-size: 45px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            font-size: 20px;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .card ul li i {
+            font-size: 12px;
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--secondary);
+        }
+
+        /* Responsive Mobile Styling */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Ankit <span>CSC & Mobile Hub</span></h1>
+        </div>
+        <nav>
+            <a href="#csc">CSC Services</a>
+            <a href="#accessories">Accessories & Gifts</a>
+            <a href="#designing">Graphic Design</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>सभी डिजिटल सेवाएँ एवं मोबाइल एक्सेसरीज एक ही स्थान पर</h2>
+        <p>सरकारी योजनाएं, सीएससी सर्विस, फोटो फ्रेम्स, कस्टमाइज्ड गिफ्ट्स और ग्राफिक डिजाइनिंग</p>
+        <a href="https://wa.me/918307046050?text=Hello%20Ankit%20Bhai,%20mujhe%20service%20ke%20bare%20me%20jaankari%20chahiye" class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp पर संपर्क करें
+        </a>
+    </section>
+
+    <div class="container">
+
+        <!-- CSC Services Section -->
+        <section id="csc" style="margin-bottom: 60px;">
+            <div class="section-title">
+                <h3>CSC & Common Services (जन सेवा केंद्र)</h3>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-id-card"></i>
+                    <h4>कार्ड एवं आईडी सेवाएं</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> नया आधार कार्ड / अपडेट</li>
+                        <li><i class="fas fa-check"></i> पैन कार्ड (Pan Card) नया व करेक्शन</li>
+                        <li><i class="fas fa-check"></i> वोटर आईडी कार्ड (Voter ID)</li>
+                        <li><i class="fas fa-check"></i> आयुष्मान भारत कार्ड</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h4>बिल भुगतान एवं बैंकिंग</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> बिजली बिल भुगतान (UHBVN)</li>
+                        <li><i class="fas fa-check"></i> पैसे निकालना व ट्रांसफर (AEPS/UPI)</li>
+                        <li><i class="fas fa-check"></i> रिचार्ज (मोबाइल / DTH)</li>
+                        <li><i class="fas fa-check"></i> सोलर लोन एप्लिकेशन्स</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>ऑनलाइन फॉर्म व दस्तावेज</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> सभी प्रकार के सरकारी नौकरी फॉर्म</li>
+                        <li><i class="fas fa-check"></i> आय, जाति, निवास प्रमाण पत्र</li>
+                        <li><i class="fas fa-check"></i> PVC स्मार्ट कार्ड प्रिंटिंग</li>
+                        <li><i class="fas fa-check"></i> IRCTC टिकट बुकिंग</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Accessories & Gifting Section -->
+        <section id="accessories" style="margin-bottom: 60px;">
+            <div class="section-title">
+                <h3>Mobile Accessories & Gift Items</h3>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>मोबाइल एक्सेसरीज</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> फैंसी मोबाइल कवर्स (Trendy Covers)</li>
+                        <li><i class="fas fa-check"></i> फास्ट चार्जर व केबल (Fast Chargers)</li>
+                        <li><i class="fas fa-check"></i> स्मार्टवॉच (Smartwatches)</li>
+                        <li><i class="fas fa-check"></i> एयरबड्स व इयरफ़ोन (Airbuds)</li>
+                        <li><i class="fas fa-check"></i> मोबाइल ग्लास कार्ड (Glass Protectors)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-gift"></i>
+                    <h4>कस्टमाइज्ड गिफ्ट्स (Customized Gifts)</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> क्रिस्टल फोटो फ्रेम (Crystal Photo Frames)</li>
+                        <li><i class="fas fa-check"></i> 3D क्रिस्टल लाइट्स (Crystal Lights)</li>
+                        <li><i class="fas fa-check"></i> सिलिकॉन नाइट लाइट्स (Silicone Night Lights)</li>
+                        <li><i class="fas fa-check"></i> कस्टम फोटो प्रिंटिंग गिफ्ट्स</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <i class="fas fa-camera"></i>
+                    <h4>फोटो एडिटिंग व प्रिंटिंग</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> HD फोटो एनहांसमेंट (HD Photo Editing)</li>
+                        <li><i class="fas fa-check"></i> पासपोर्ट साइज फोटो</li>
+                        <li><i class="fas fa-check"></i> फोटो बैकग्राउंड रिमूवल</li>
+                        <li><i class="fas fa-check"></i> 3D अवतार व डिजिटल आर्ट</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Graphic Designing Section -->
+        <section id="designing">
+            <div class="section-title">
+                <h3>Graphic Design & Promotion</h3>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>ग्राफिक डिजाइनिंग</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> पोस्टर व बैनर डिजाइनिंग</li>
+                        <li><i class="fas fa-check"></i> विजिटिंग कार्ड व पंपलेट</li>
+                        <li><i class="fas fa-check"></i> इंस्टाग्राम रील्स (9:16) व स्टोरी एसेट</li>
+                        <li><i class="fas fa-check"></i> व्हाट्सएप स्टेटस व प्रमोशनल मीडिया</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p><strong>Ankit CSC Centre & Mobile Shop</strong></p>
+        <p>ग्राम कुराली (Kurali), करनाल, हरियाणा</p>
+        <p style="margin-top: 10px;">Created with ❤️ for <span>Ankit CSC Centre</span></p>
+    </footer>
+
+</body>
+</html>
